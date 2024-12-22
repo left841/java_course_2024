@@ -3,6 +3,10 @@ package task_1;
 import java.util.Arrays;
 import java.util.Comparator;
 
+/**
+ * Implements list data structure based on array.
+ * @param <T> Type of elements in list
+ */
 public class ArrayList_YuriySavkin<T> implements IntensiveList<T> {
     private T[] data;
     private int size;
@@ -30,7 +34,8 @@ public class ArrayList_YuriySavkin<T> implements IntensiveList<T> {
     }
 
     /**
-     * @return
+     * Returns Current amount of elements in list.
+     * @return Current size of list
      */
     @Override
     public int size() {
@@ -38,7 +43,8 @@ public class ArrayList_YuriySavkin<T> implements IntensiveList<T> {
     }
 
     /**
-     * @param element
+     * Adds element in the end of the list
+     * @param element Element to add
      */
     @Override
     public void add(T element) {
@@ -46,8 +52,10 @@ public class ArrayList_YuriySavkin<T> implements IntensiveList<T> {
     }
 
     /**
-     * @param index
-     * @param element
+     * Adds element in the list in the position specified by index.
+     * If index is less than size of list than all elements past specified index are shifted by one position to end of list.
+     * @param index Index of element to insert. Must be in range [0, size()]
+     * @param element Element to add
      */
     @Override
     public void add(int index, T element) {
@@ -68,8 +76,9 @@ public class ArrayList_YuriySavkin<T> implements IntensiveList<T> {
     }
 
     /**
-     * @param index
-     * @return
+     * Gets element by specified index.
+     * @param index Index of element to get. Must be in range [0, size() - 1]
+     * @return element by specified index
      */
     @Override
     public T get(int index) {
@@ -80,9 +89,10 @@ public class ArrayList_YuriySavkin<T> implements IntensiveList<T> {
     }
 
     /**
-     * @param index
-     * @param element
-     * @return
+     * Set element by specified index to new value.
+     * @param index Index of element to set. Must be in range [0, size() - 1]
+     * @param element Value to set
+     * @return Value of element that previously was on indexed position
      */
     @Override
     public T set(int index, T element) {
@@ -96,8 +106,10 @@ public class ArrayList_YuriySavkin<T> implements IntensiveList<T> {
     }
 
     /**
-     * @param index
-     * @return
+     * Removes element from list by index.
+     * Elements past specified index are shifted by one position to begin of list.
+     * @param index Index of element to remove. Must be in range [0, size() - 1]
+     * @return Value of element that previously was on indexed position
      */
     @Override
     public T remove(int index) {
@@ -116,7 +128,8 @@ public class ArrayList_YuriySavkin<T> implements IntensiveList<T> {
     }
 
     /**
-     *
+     * Clears all elements.
+     * Sets size to 0 and capacity of underlying array to default value.
      */
     @Override
     public void clear() {
@@ -125,7 +138,9 @@ public class ArrayList_YuriySavkin<T> implements IntensiveList<T> {
     }
 
     /**
-     * @param comparator
+     * Sorts element in list by comparator.
+     * Uses the algorithm of quick sort.
+     * @param comparator Used comparator.
      */
     @Override
     public void quickSort(Comparator<T> comparator) {
@@ -160,7 +175,9 @@ public class ArrayList_YuriySavkin<T> implements IntensiveList<T> {
     }
 
     /**
-     * @return
+     * Check if elements sorted by comparator that was previously used for sort.
+     * if list wasn't previously sorted by comparator then return false;
+     * @return true if elements lying in order by comparator, false otherwise
      */
     @Override
     public boolean isSorted() {
@@ -175,7 +192,9 @@ public class ArrayList_YuriySavkin<T> implements IntensiveList<T> {
     }
 
     /**
-     * @param size
+     * Split list to new size.
+     * Truncates elements from indexes larger than new size and sets references to null.
+     * @param size New size of list. Must be in range [0, size()]
      */
     @Override
     public void split(int size) {
