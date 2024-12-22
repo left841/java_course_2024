@@ -171,7 +171,7 @@ public class ArrayList_YuriySavkin<T> implements IntensiveList<T> {
         }
 
         quickSortPart(first_index, right_index);
-        quickSortPart(right_index + 1, last_index);
+        quickSortPart(left_index, last_index);
     }
 
     /**
@@ -185,7 +185,7 @@ public class ArrayList_YuriySavkin<T> implements IntensiveList<T> {
             return false;
 
         for (int i = 1; i < size; ++i)
-            if (last_comparator.compare(data[i - 1], data[i]) >= 0)
+            if (last_comparator.compare(data[i - 1], data[i]) > 0)
                 return false;
 
         return true;
