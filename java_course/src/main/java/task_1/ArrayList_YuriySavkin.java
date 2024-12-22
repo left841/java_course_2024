@@ -13,7 +13,7 @@ public class ArrayList_YuriySavkin<T> implements IntensiveList<T> {
     private Comparator<T> last_comparator;
 
     private final static double MEMORY_MULTIPLIER = 2.0;
-    protected final static int DEFAULT_CAPACITY = 0;
+    private final static int DEFAULT_CAPACITY = 0;
 
     ArrayList_YuriySavkin() {
         size = 0;
