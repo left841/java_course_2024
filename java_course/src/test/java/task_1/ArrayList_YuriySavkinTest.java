@@ -30,9 +30,7 @@ public class ArrayList_YuriySavkinTest {
     public void canAddElements() {
         ArrayList_YuriySavkin<Integer> arr = new ArrayList_YuriySavkin<>();
 
-        assertDoesNotThrow(()-> {
-            arr.add(6);
-        });
+        assertDoesNotThrow(()-> arr.add(6));
     }
 
     @ParameterizedTest

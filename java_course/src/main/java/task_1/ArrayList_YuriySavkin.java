@@ -15,12 +15,14 @@ public class ArrayList_YuriySavkin<T> implements IntensiveList<T> {
     private final static double MEMORY_MULTIPLIER = 2.0;
     private final static int DEFAULT_CAPACITY = 0;
 
+    @SuppressWarnings("unchecked")
     ArrayList_YuriySavkin() {
         size = 0;
         data = (T[])new Object[DEFAULT_CAPACITY];
         last_comparator = null;
     }
 
+    @SuppressWarnings("unchecked")
     ArrayList_YuriySavkin(int size) {
         this.size = size;
         data = (T[])new Object[size];
@@ -132,6 +134,7 @@ public class ArrayList_YuriySavkin<T> implements IntensiveList<T> {
      * Sets size to 0 and capacity of underlying array to default value.
      */
     @Override
+    @SuppressWarnings("unchecked")
     public void clear() {
         size = 0;
         data = (T[]) new Object[DEFAULT_CAPACITY];
